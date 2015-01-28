@@ -48,7 +48,7 @@
 					<h1>Using Git and GitHub</h1>
 					<h3>Like, effectively</h3>
 					<p>
-						<small>Curtis Rueden, Mark Hiner &amp; Johannes Koenig-Schindelin</small>
+						<small>Johannes Koenig-Schindelin</small>
 					</p>
 				</section>
 
@@ -62,12 +62,12 @@
 						<h3>Common scientific development workflow</h3>
 						<ul>
 							<li class="fragment">Email</li>
-							<li class="fragment">Hack some code</li>
+							<li class="fragment">Record an ImageJ macro</li>
 							<li class="fragment">Meeting</li>
-							<li class="fragment">Hack some code</li>
+							<li class="fragment">Where was I? Ah, yes: ImageJ macro</li>
 							<li class="fragment">Student needs something</li>
-							<li class="fragment">Hack some code</li>
-							<li class="fragment">It is broken?</li>
+							<li class="fragment">Change ImageJ macro</li>
+							<li class="fragment">It works no longer?</li>
 							<li class="fragment">WTF?</li>
 							<li class="fragment">???</li>
 							<li class="fragment">Boohooooo!</li>
@@ -78,9 +78,9 @@
 						<h3>Common scientific development workflow, version II</h3>
 						<ul>
 							<li class="fragment">Coffee</li>
-							<li class="fragment">Make a change in the code</li>
+							<li class="fragment">Make a change to Christopher's R script</li>
 							<li class="fragment">Test</li>
-							<li class="fragment">Make another change in the code</li>
+							<li class="fragment">Make some more changes in the code</li>
 							<li class="fragment">Test</li>
 							<li class="fragment">Send the code to a collaborator</li>
 							<li class="fragment">It no longer works!</li>
@@ -93,9 +93,10 @@
 					<section>
 						<h3>Less common scientific development workflow</h3>
 						<ul>
-							<li class="fragment">Make changes in the code</li>
+							<li class="fragment">Dig up Michael's old Python script to stitch images</li>
 							<li class="fragment">It works, great!</li>
-							<li class="fragment">Collaborator made different changes in the code!</li>
+							<li class="fragment">Somebody improved it, great!</li>
+							<li class="fragment">Michael actually improved other parts in the meantime!</li>
 							<li class="fragment">How to reconcile?</li>
 							<li class="fragment">???</li>
 							<li class="fragment">Boohooooo!</li>
@@ -105,7 +106,7 @@
 					<section>
 						<h3>Most common development workflow</h3>
 						<ul>
-							<li class="fragment">Provide code to collaborator</li>
+							<li class="fragment">Provide a macro to collaborator</li>
 							<li class="fragment">Six months later...</li>
 							<li class="fragment">Get mail saying: your code is broken</li>
 							<li class="fragment">Test verifies: is broken</li>
@@ -115,6 +116,21 @@
 							<li class="fragment">Boohooooo!</li>
 						</ul>
 					</section>
+				</section>
+
+				<section>
+					<h1>The solution!</h1>
+					<ul>
+						<li class="fragment">Store "software revisions"</li>
+						<li class="fragment">A revision consists of:</li>
+						<ul>
+							<li class="fragment">A collection of files</li>
+							<li class="fragment">An author</li>
+							<li class="fragment">A date</li>
+							<li class="fragment">Usually based on a previous revision</li>
+						</ul>
+						<li class="fragment">Share those revisions via GitHub!</li>
+					</ul>
 				</section>
 
 				<section>
@@ -141,11 +157,45 @@
 					</section>
 
 					<section>
-						<h3>Cloning the <i>loci-scripts</i> repository</h3>
+						<h3>Configuring GitHub 1/3</h3>
+						<img src="images/github-mac-init.png" />
+					</section>
+
+					<section>
+						<h3>Configuring GitHub 2/3</h3>
+						<img src="images/github-mac-connect.png" />
+					</section>
+
+					<section>
+						<h3>Configuring GitHub 3/3</h3>
+						<img src="images/github-mac-config.png" />
+					</section>
+
+					<section>
+						<h3>(If you have Windows...)</h3>
+						<img src="images/github-windows-options.png" />
+					</section>
+
+					<section>
+						<h3>Cloning a repository</h3>
+						<img src="images/github-mac-clone.png" />
+					</section>
+
+					<!--
+					<section>
+						<img src="images/github-mac-add-repo.png" />
+					</section>
+
+					<section>
+						<img src="images/github-mac-first-commit.png" />
+					</section>
+
+					<section>
+						<h3>Cloning the <i>playground</i> repository</h3>
 						<pre>
 						<code lang="bash" data-trim contenteditable>
-$ git clone https://github.com/uw-loci/loci-scripts
-Cloning into 'loci-scripts'...
+$ git clone https://github.com/tomancaklab/playground
+Cloning into 'playground'...
 remote: Reusing existing pack: 27, done.
 remote: Total 27 (delta 0), reused 0 (delta 0)
 Unpacking objects: 100% (27/27), done.
@@ -153,6 +203,7 @@ Checking connectivity... done.
 						</code>
 						</pre>
 					</section>
+					-->
 				</section>
 
 				<section>
@@ -488,16 +539,17 @@ $ git bisect reset
 						<ul>
 							<li>
 								Looking at individual commits:<br />
-								<a href="https://github.com/uw-loci/loci-scripts/commit/HEAD^">https://github.com/uw-loci/loci-scripts/commit/HEAD^</a>
+								<a href="https://github.com/tomancaklab/playground/commit/HEAD^">https://github.com/tomancaklab/playground/commit/HEAD^</a>
 							</li>
 							<li class="fragment">
 								Looking at topic branches:<br />
-								<a href="https://github.com/uw-loci/loci-scripts/compare/master...tutorial">https://github.com/uw-loci/loci-scripts/compare/master...tutorial</a>
+								<a href="https://github.com/tomancaklab/playground/compare/master...tutorial">https://github.com/tomancaklab/playground/compare/master...tutorial</a>
 							</li>
 							<li class="fragment">'t'</li>
 							<li class="fragment">Click on line numbers</li>
 							<li class="fragment">'y'</li>
 							<li class="fragment">'?'</li>
+							<li class="fragment">... more on the <a href="http://fiji.sc/GitHub_Tricks"><i>GitHub Tricks</i></a> page on the Fiji wiki</li>
 						</ul>
 					</section>
 
