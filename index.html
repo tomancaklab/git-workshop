@@ -187,33 +187,7 @@
 					</section>
 
 					<section>
-						<h3>Accessing the working directory 1/2</h3>
-						<img src="images/github-mac-finder.png" />
-					</section>
-
-
-					<section>
-						<h3>Accessing the working directory 2/2</h3>
-						<img src="images/mac-finder.png" />
-					</section>
-
-<!-- TODO: move after the theory, add a screenshot with merge conflicts -->
-					<section>
-						<h3>Looking at the history</h3>
-						<img src="images/github-mac-history.png" />
-					</section>
-
-					<!--
-					<section>
-						<img src="images/github-mac-add-repo.png" />
-					</section>
-
-					<section>
-						<img src="images/github-mac-first-commit.png" />
-					</section>
-
-					<section>
-						<h3>Cloning the <i>playground</i> repository</h3>
+						<h3>Cloning on the command-line<br /><small>Christopher, wake up!</small></h3>
 						<pre>
 						<code lang="bash" data-trim contenteditable>
 $ git clone https://github.com/tomancaklab/playground
@@ -225,7 +199,15 @@ Checking connectivity... done.
 						</code>
 						</pre>
 					</section>
-					-->
+					<section>
+						<h3>Accessing the working directory 1/2</h3>
+						<img src="images/github-mac-finder.png" />
+					</section>
+
+					<section>
+						<h3>Accessing the working directory 2/2</h3>
+						<img src="images/mac-finder.png" />
+					</section>
 				</section>
 
 				<section>
@@ -269,11 +251,14 @@ index 46ea613..d920528 100644
 						</code>
 						</pre>
 					</section>
-				</section>
 
-				<section>
 					<section>
-						<h3>Commits</h3>
+						<h3>Making a new revision ("committing")</h3>
+						<img src="images/github-mac-changes.png" />
+					</section>
+
+					<section>
+						<h3>Committing on the command line</h3>
 						<pre>
 						<code lang="bash" data-trim contenteditable>
 $ git status
@@ -287,12 +272,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 $ git add hello.txt
 
-$ git status
-On branch master
-Changes to be committed:
-  (use "git reset HEAD &lt;file&gt;..." to unstage)
-
-	new file:   hello.txt
+$ git commit
 						</code>
 						</pre>
 					</section>
@@ -334,34 +314,18 @@ Separate paragraphs with blank lines.
 
 				<section>
 					<section>
-						<h3>Commit history</h3>
-						<img src="images/git-history.png" />
+						<h3>Synchronizing</h3>
+						<img src="images/github-mac-sync.png" />
 					</section>
 
 					<section>
-						<h3>"git log"</h3>
-						<ul>
-						<li><pre>git log</pre></li>
-						<li class="fragment"><pre>git log -p</pre></li>
-						<li class="fragment"><pre>git log origin/master</pre></li>
-						<li class="fragment"><pre>git log bin/</pre></li>
-						<li class="fragment"><pre>git log -SXmx</pre></li>
-						<li class="fragment"><pre>git log --author=Curtis</pre></li>
-						<li class="fragment"><pre>git log -3</pre></li>
-						<li class="fragment"><pre>git log HEAD^..HEAD^2</pre></li>
-						</ul>
-					</section>
-				</section>
-
-				<section>
-					<section>
-						<h3>Merges</h3>
+						<h3>Synchronizing on the command line</h3>
 						<pre>
-						<code lang="bash" data-trim contenteditable>
-$ git merge origin/tutorial
-Auto-merging bin/prairie-backup.sh
-CONFLICT (content): Merge conflict in bin/prairie-backup.sh
-Recorded preimage for 'bin/prairie-backup.sh'
+$ git pull
+From https://github.com/tomancaklab/playground
+ * branch            master     -&gt; FETCH_HEAD
+Auto-merging README.md
+CONFLICT (content): Merge conflict in README.md
 Automatic merge failed; fix conflicts and then commit the result.
 
 $ git status
@@ -372,15 +336,27 @@ You have unmerged paths.
 Unmerged paths:
   (use "git add &lt;file&gt;..." to mark resolution)
 
-	both modified:   bin/prairie-backup.sh
-
-no changes added to commit (use "git add" and/or "git commit -a")
-						</code>
+	<span style="color: red;">both modified:   README.md</span>
 						</pre>
 					</section>
 
 					<section>
-						<h3>Merge conflicts</h3>
+						<h3>Dealing with conflicts 1/4</h3>
+						<img src="images/github-mac-conflicts.png" />
+					</section>
+
+					<section>
+						<h3>Dealing with conflicts 2/4</h3>
+						<img src="images/github-mac-conflicts2.png" />
+					</section>
+
+					<section>
+						<h3>Dealing with conflicts 3/4</h3>
+						<img src="images/github-mac-resolving.png" />
+					</section>
+
+					<section>
+						<h3>A closer look at conflict markers</h3>
 						<pre>
   # compress Prairie dataset to ZIP file
   echo
@@ -403,6 +379,54 @@ no changes added to commit (use "git add" and/or "git commit -a")
   echo
   echo "Deleting '$datasetFullName'..."
 						</pre>
+					</section>
+
+					<section>
+						<h3>Dealing with conflicts 4/4</h3>
+						<img src="images/github-mac-resolved.png" />
+					</section>
+
+					<section>
+						<h3>Synchronizing (again...)</h3>
+						<img src="images/github-mac-push.png" />
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Looking at the history</h3>
+						<img src="images/github-mac-history.png" />
+					</section>
+
+					<section>
+						<h3>Another look at the history: gitk</h3>
+						<img src="images/git-history.png" />
+					</section>
+
+					<section>
+						<h3>"Yet another look, via the command-line: git log"</h3>
+						<ul>
+						<li><pre>git log</pre></li>
+						<li class="fragment"><pre>git log -p</pre></li>
+						<li class="fragment"><pre>git log origin/master</pre></li>
+						<li class="fragment"><pre>git log bin/</pre></li>
+						<li class="fragment"><pre>git log -SXmx</pre></li>
+						<li class="fragment"><pre>git log --author=Christopher</pre></li>
+						<li class="fragment"><pre>git log -3</pre></li>
+						<li class="fragment"><pre>git log HEAD^..HEAD^2</pre></li>
+						</ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h3>Ignoring certain files 1/2</h3>
+						<img src="images/github-mac-ignore.png" />
+					</section>
+
+					<section>
+						<h3>Ignoring certain files 2/2</h3>
+						<img src="images/github-mac-gitignore.png" />
 					</section>
 				</section>
 
@@ -444,7 +468,22 @@ no changes added to commit (use "git add" and/or "git commit -a")
 
 				<section>
 					<section>
-						<h3>Topic branches</h3>
+						<h3>Starting a topic branch 1/3</h3>
+						<img src="images/github-mac-branching.png" />
+					</section>
+
+					<section>
+						<h3>Starting a topic branch 2/3</h3>
+						<img src="images/github-mac-branching2.png" />
+					</section>
+
+					<section>
+						<h3>Starting a topic branch 3/3</h3>
+						<img src="images/github-mac-topic-branches.png" />
+					</section>
+
+					<section>
+						<h3>Topic branches on the command-line<br /><small>Christopher, this slide is for you again!</small></h3>
 						<pre>
 						<code lang="bash" data-trim contenteditable>
 $ git checkout -b my-cool-topic origin/master
@@ -464,11 +503,11 @@ To origin
 					</section>
 
 					<section>
-						<h3>Rewriting branches</h3>
+						<h3>Rewriting branches</br ><spaan style='color: red'>Never, <b>ever</b> rewrite <i>master</i></span></h3>
 						<pre>
 						<code lang="bash" data-trim contenteditable>
 $ git rebase -i origin/master
-Successfully rebased and updated refs/heads/master.
+Successfully rebased and updated refs/heads/my-cool-topic.
 
 $ git push origin +HEAD
 Counting objects: 17, done.
@@ -477,7 +516,7 @@ Compressing objects: 100% (12/12), done.
 Writing objects: 100% (17/17), 12.75 KiB | 0 bytes/s, done.
 Total 17 (delta 3), reused 0 (delta 0)
 To origin
- + 597967a...deadbeef HEAD^ -&gt; master (forced update)
+ + 597967a...deadbeef HEAD^ -&gt; my-cool-topic (forced update)
 						</code>
 						</pre>
 					</section>
@@ -588,7 +627,7 @@ $ git bisect reset
 
 				<section>
 					<h1>Thank you!</h1>
-					<p>ImageJ2 team:</p>
+					<p>ImageJ2/Fiji team (sponsored the first Git workshop based on these slides):</p>
 					<p class="gallery"><img src="images/kevin-eliceiri.jpg" /><img src="images/curtis.jpg" /><img src="images/dschos-pony.jpg" /><img src="images/mark-hiner.jpg" /></p>
 				</section>
 			</div>
